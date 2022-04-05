@@ -25,7 +25,7 @@ namespace MyGame
 
         public World()
         {
-            hero = new Basic2d("2d\\Hero", new Vector2(300, 300), new Vector2(48, 48));
+            hero = new Basic2d(@"D:\uni\4sem\OOP\kursovoj\kursovoj\Content\2d\VLADYM", new Vector2(300, 300), new Vector2(48, 48));
         }
 
         public virtual void Update()

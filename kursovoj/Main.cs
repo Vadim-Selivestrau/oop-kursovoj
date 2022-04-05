@@ -6,18 +6,18 @@ namespace MyGame
 {
     internal class Main : Game
     {
-
-        private GraphicsDeviceManager graphics;
+        SpriteBatch spriteBatch;
+        GraphicsDeviceManager graphics;
+        
         World world;
 
 
         public Main()
-            : base()
         {
-            this.graphics = new GraphicsDeviceManager(this);
-            this.Content.RootDirectory = "Content";
-            this.IsFixedTimeStep = true;
-            this.IsMouseVisible = true;
+            graphics = new GraphicsDeviceManager(this);
+            Content.RootDirectory = "Content";
+            /// this.IsFixedTimeStep = true;
+            /// this.IsMouseVisible = true;
         }
 
         protected override void Initialize()
@@ -41,14 +41,21 @@ namespace MyGame
 
         protected override void Update(GameTime gameTime)
         {
-            base.Update(gameTime);
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+                Exit();
 
             world.Update();
+
+            base.Update(gameTime);
         }
+
+
+
+
 
         protected override void Draw(GameTime gameTime)
         {
-            this.GraphicsDevice.Clear(Color.OrangeRed);
+            this.GraphicsDevice.Clear(Color.Black);
             Globals.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend);
 
 
