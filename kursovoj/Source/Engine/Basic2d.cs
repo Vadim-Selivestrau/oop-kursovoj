@@ -17,17 +17,17 @@ using Microsoft.Xna.Framework.Content;
 
 namespace MyGame
 {
-    public class Basic2d
+    class Basic2d
     {
 
-        public Vector2 x, y;
+        public Vector2 pos, dims;
 
         public Texture2D myModel;
 
-        public Basic2d(string PATH, Vector2 X, Vector2 Y)
+        public Basic2d(string PATH, Vector2 POS, Vector2 DIMS)
         {
-            x = X;
-            y = Y;
+            pos = POS;
+            dims = DIMS;
 
             myModel = Globals.content.Load<Texture2D>(PATH);
         }
@@ -41,7 +41,7 @@ namespace MyGame
         {
             if(myModel != null)
             {
-                Globals.spriteBatch.Draw(myModel, new Rectangle((int)(x.X), (int)(x.Y), (int)(y.X), (int)(y.Y)), null, Color.Green, 0.0f, new Vector2(myModel.Bounds.Width / 2, myModel.Bounds.Height / 2), new SpriteEffects(), 0);
+                Globals.spriteBatch.Draw(myModel, new Rectangle((int)(pos.X), (int)(pos.Y), (int)(dims.X), (int)(dims.Y)), null, Color.Green, 0.0f, new Vector2(myModel.Bounds.Width / 2, myModel.Bounds.Height / 2), new SpriteEffects(), 0);
             }
         }
     }

@@ -16,9 +16,11 @@ using Microsoft.Xna.Framework.Content;
 
 namespace MyGame
 {
-    public class Globals
+    class Globals
     {
         public static ContentManager content;
         public static SpriteBatch spriteBatch;
+
+        public static MyKeyboard keyboard;
     }
 }

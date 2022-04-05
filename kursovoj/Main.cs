@@ -30,6 +30,17 @@ namespace MyGame
             Globals.content = this.Content;
             Globals.spriteBatch = new SpriteBatch(GraphicsDevice);
             
+
+
+
+
+
+
+            Globals.keyboard = new MyKeyboard();
+
+
+
+
             world = new World();
         
         }
@@ -44,7 +55,14 @@ namespace MyGame
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
+
+            Globals.keyboard.Update();
+
             world.Update();
+
+            Globals.keyboard.UpdateOld();
+            
+
 
             base.Update(gameTime);
         }
@@ -55,7 +73,7 @@ namespace MyGame
 
         protected override void Draw(GameTime gameTime)
         {
-            this.GraphicsDevice.Clear(Color.Black);
+            this.GraphicsDevice.Clear(Color.DarkGray);
             Globals.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend);
 
 

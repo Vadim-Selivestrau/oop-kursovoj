@@ -18,24 +18,24 @@ namespace MyGame
 {
 
     
-    public class World
+    class World
     {
 
-        public Basic2d hero;
+        public PlayerSpaceShip playerSpaceShip;
 
         public World()
         {
-            hero = new Basic2d(@"D:\uni\4sem\OOP\kursovoj\kursovoj\Content\2d\VLADYM", new Vector2(300, 300), new Vector2(48, 48));
+            playerSpaceShip = new PlayerSpaceShip(@"D:\uni\4sem\OOP\kursovoj\kursovoj\Content\2d\VLADYM", new Vector2(300, 300), new Vector2(200, 200));
         }
 
         public virtual void Update()
         {
-            hero.Update();
+            playerSpaceShip.Update();
         }
 
         public virtual void Draw()
         {
-            hero.Draw();
+            playerSpaceShip.Draw();
         }
     }
 }
