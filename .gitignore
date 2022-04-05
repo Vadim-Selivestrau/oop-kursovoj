@@ -6,3 +6,5 @@
 .vs/
 obj/
 kursovoj.csproj
+bin/
+Content/obj/
