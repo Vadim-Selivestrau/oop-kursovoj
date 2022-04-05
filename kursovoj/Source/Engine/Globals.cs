@@ -18,9 +18,21 @@ namespace MyGame
 {
     class Globals
     {
+        public static int screenHeight, screenWidth;
+
         public static ContentManager content;
         public static SpriteBatch spriteBatch;
 
         public static MyKeyboard keyboard;
+        public static MyMouseControl mouse;
+
+
+        public static float GetDistance(Vector2 pos, Vector2 target)
+        {
+            return (float)Math.Sqrt(Math.Pow(pos.X - target.X, 2) + Math.Pow(pos.Y - target.Y, 2));
+        }
+
+
+        
     }
 }

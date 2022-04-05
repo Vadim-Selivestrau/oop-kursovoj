@@ -11,6 +11,7 @@ namespace MyGame
         
         World world;
 
+        Basic2d cursor;
 
         public Main()
         {
@@ -29,15 +30,15 @@ namespace MyGame
         {
             Globals.content = this.Content;
             Globals.spriteBatch = new SpriteBatch(GraphicsDevice);
-            
 
 
 
+            cursor = new Basic2d(@"D:\uni\4sem\OOP\kursovoj\kursovoj\Content\2d\Mics\CursorArrow", new Vector2(0, 0), new Vector2(28,28));
 
 
 
             Globals.keyboard = new MyKeyboard();
-
+            Globals.mouse = new MyMouseControl();
 
 
 
@@ -50,6 +51,9 @@ namespace MyGame
             base.UnloadContent();
         }
 
+
+
+
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
@@ -57,11 +61,17 @@ namespace MyGame
 
 
             Globals.keyboard.Update();
+            Globals.mouse.Update();
+
 
             world.Update();
 
-            Globals.keyboard.UpdateOld();
             
+            Globals.keyboard.UpdateOld();
+            Globals.mouse.UpdateOld();
+            
+
+
 
 
             base.Update(gameTime);
@@ -74,13 +84,19 @@ namespace MyGame
         protected override void Draw(GameTime gameTime)
         {
             this.GraphicsDevice.Clear(Color.DarkGray);
+            
+            
+            
             Globals.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend);
 
 
             world.Draw();
 
-
+            cursor.Draw(new Vector2(Globals.mouse.newMousePos.X, Globals.mouse.newMousePos.Y), new Vector2(0, 0));
             Globals.spriteBatch.End();
+            
+            
+            
             base.Draw(gameTime);
         }
     }
