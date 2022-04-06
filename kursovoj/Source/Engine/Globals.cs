@@ -16,6 +16,13 @@ using Microsoft.Xna.Framework.Content;
 
 namespace MyGame
 {
+
+    public delegate void PassObject(object i);
+    public delegate object PassObjectAndReturn(object i);
+
+
+
+
     class Globals
     {
         public static int screenHeight, screenWidth;
@@ -26,6 +33,7 @@ namespace MyGame
         public static MyKeyboard keyboard;
         public static MyMouseControl mouse;
 
+        public static GameTime gameTime;
 
         public static float GetDistance(Vector2 pos, Vector2 target)
         {

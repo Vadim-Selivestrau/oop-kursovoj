@@ -17,10 +17,10 @@ using Microsoft.Xna.Framework.Content;
 
 namespace MyGame
 {
-    class PlayerSpaceShip : Basic2d
+    class Unit : Basic2d
     {
         public float speed;
-        public PlayerSpaceShip(string PATH, Vector2 POS, Vector2 DIMS)
+        public Unit(string PATH, Vector2 POS, Vector2 DIMS)
             :base(PATH, POS, DIMS)
         {
             speed = 3.0f;
@@ -28,25 +28,6 @@ namespace MyGame
 
         public override void Update()
         {
-            if (Globals.keyboard.GetPress("W"))
-            {
-                pos = new Vector2(pos.X, pos.Y - speed);
-            }
-
-            if (Globals.keyboard.GetPress("A"))
-            {
-                pos = new Vector2(pos.X - speed, pos.Y);
-            }
-
-            if (Globals.keyboard.GetPress("S"))
-            {
-                pos = new Vector2(pos.X, pos.Y + speed);
-            }
-
-            if (Globals.keyboard.GetPress("D"))
-            {
-                pos = new Vector2(pos.X + speed, pos.Y);
-            }
 
             base.Update();
         }
