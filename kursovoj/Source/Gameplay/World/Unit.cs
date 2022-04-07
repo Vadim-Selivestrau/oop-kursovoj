@@ -19,22 +19,33 @@ namespace MyGame
 {
     class Unit : Basic2d
     {
-        public float speed;
+        public bool dead;
+
+        public float speed, hitDistance;
         public Unit(string PATH, Vector2 POS, Vector2 DIMS)
             :base(PATH, POS, DIMS)
         {
+            dead = false;
+
             speed = 3.0f;
+
+            hitDistance = 35.0f;
         }
 
-        public override void Update()
+        public override void Update(Vector2 OFFSET)
         {
 
-            base.Update();
+            base.Update(OFFSET);
         }
 
         public override void Draw()
         {
             base.Draw();
+        }
+
+        public virtual void GetHit()
+        {
+            dead = true;
         }
 
 

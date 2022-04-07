@@ -19,14 +19,13 @@ namespace MyGame
 {
     class PlayerSpaceShip : Unit
     {
-        public float speed;
         public PlayerSpaceShip(string PATH, Vector2 POS, Vector2 DIMS)
             :base(PATH, POS, DIMS)
         {
             speed = 3.0f;
         }
 
-        public override void Update()
+        public override void Update(Vector2 OFFSET)
         {
             if (Globals.keyboard.GetPress("W"))
             {
@@ -50,15 +49,15 @@ namespace MyGame
 
             if (Globals.keyboard.GetPress("Space"))
             {
-                GameGlobals.PassObjectile(new Bullet(new Vector2(pos.X, pos.Y), this, new Vector2(pos.X + Globals.screenHeight, pos.Y - 100)));
+                //GameGlobals.PassObjectile(new Bullet(new Vector2(pos.X, pos.Y), this, new Vector2(pos.X + Globals.screenHeight, pos.Y - 100)));
 
                 GameGlobals.PassObjectile(new Bullet(new Vector2(pos.X, pos.Y), this, new Vector2(pos.X + Globals.screenHeight, pos.Y)));
 
-                GameGlobals.PassObjectile(new Bullet(new Vector2(pos.X, pos.Y), this, new Vector2(pos.X + Globals.screenHeight, pos.Y + 100)));
+                //GameGlobals.PassObjectile(new Bullet(new Vector2(pos.X, pos.Y), this, new Vector2(pos.X + Globals.screenHeight, pos.Y + 100)));
             }
 
 
-            base.Update();
+            base.Update(OFFSET);
         }
 
         public override void Draw()

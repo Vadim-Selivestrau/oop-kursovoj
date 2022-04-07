@@ -32,10 +32,16 @@ namespace MyGame
             myModel = Globals.content.Load<Texture2D>(PATH);
         }
 
-        public virtual void Update()
+        public virtual void Update(Vector2 OFFSET)
         {
 
         }
+        public virtual void Update(Vector2 OFFSET, PlayerSpaceShip PLAYER)
+        {
+
+        }
+
+
 
         public virtual void Draw()
         {

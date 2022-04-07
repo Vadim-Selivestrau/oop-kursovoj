@@ -33,7 +33,7 @@ namespace MyGame
         {
             done = false;
 
-            speed = 5.0f;
+            speed = 10.0f;
 
             owner = OWNER;
 
@@ -62,8 +62,18 @@ namespace MyGame
         }
 
 
-        public virtual bool HitSomething(List<Unit> units)
+        public virtual bool HitSomething(List<Unit> UNITS)
         {
+            for(int i = 0; i < UNITS.Count; i++) 
+            {
+                if (Globals.GetDistance(pos, UNITS[i].pos) < UNITS[i].hitDistance)
+                {
+                    UNITS[i].GetHit();
+                    return true;
+                }
+            }
+
+
             return false;
         }
 
