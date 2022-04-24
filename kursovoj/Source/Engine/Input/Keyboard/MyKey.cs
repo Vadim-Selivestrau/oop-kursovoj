@@ -16,9 +16,14 @@ namespace MyGame
 {
     class MyKey
     {
-        public int state;
-        public string key, print, display;
+        private int state;
+        private string key, print, display;
 
+
+        public string GetKey()
+        {
+            return key;
+        }
 
         public MyKey(string KEY, int STATE)
         {

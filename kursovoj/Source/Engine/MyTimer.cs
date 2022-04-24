@@ -11,7 +11,7 @@ namespace MyGame
 {
     class MyTimer
     {
-        public bool goodToGo;
+        private bool goodToGo;
         protected int mSec;
         protected TimeSpan timer = new TimeSpan();
 

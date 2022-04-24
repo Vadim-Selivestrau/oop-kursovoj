@@ -17,9 +17,9 @@ using Microsoft.Xna.Framework.Content;
 
 namespace MyGame
 {
-    class PlayerSpaceShip : Unit
+    class PLAYER : Unit
     {
-        public PlayerSpaceShip(string PATH, Vector2 POS, Vector2 DIMS)
+        public PLAYER(string PATH, Vector2 POS, Vector2 DIMS)
             :base(PATH, POS, DIMS)
         {
             speed = 3.0f;
@@ -50,9 +50,10 @@ namespace MyGame
             if (Globals.keyboard.GetPress("Space"))
             {
                 //GameGlobals.PassObjectile(new Bullet(new Vector2(pos.X, pos.Y), this, new Vector2(pos.X + Globals.screenHeight, pos.Y - 100)));
-
-                GameGlobals.PassObjectile(new Bullet(new Vector2(pos.X, pos.Y), this, new Vector2(pos.X + Globals.screenHeight, pos.Y)));
-
+                if (Globals.keyboard.KeyUp())
+                {
+                    GameGlobals.PassObjectile(new Bullet(new Vector2(pos.X, pos.Y), this, new Vector2(pos.X + Globals.screenHeight, pos.Y)));
+                }
                 //GameGlobals.PassObjectile(new Bullet(new Vector2(pos.X, pos.Y), this, new Vector2(pos.X + Globals.screenHeight, pos.Y + 100)));
             }
 

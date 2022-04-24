@@ -19,10 +19,10 @@ namespace MyGame
 {
     class SpawnPoint : Basic2d
     {
-        public bool dead;
+        private bool dead;
 
-        public float speed, hitDistance;
-        
+        private float speed, hitDistance;
+
         public MyTimer spawnTimer = new MyTimer(2200);
         public SpawnPoint(string PATH, Vector2 POS, Vector2 DIMS)
             : base(PATH, POS, DIMS)

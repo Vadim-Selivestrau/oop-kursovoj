@@ -17,11 +17,13 @@ namespace MyGame
 {
     public class MyMouseControl
     {
-        public bool dragging, rightDrag;
+        private bool dragging, rightDrag;
 
-        public Vector2 newMousePos, oldMousePos, firstMousePos, newMouseAdjustedPos, systemCursorPos, screenLoc;
+        private Vector2 newMousePos, oldMousePos, firstMousePos, newMouseAdjustedPos, systemCursorPos, screenLoc;
 
-        public MouseState newMouse, oldMouse, firstMouse;
+        private MouseState newMouse, oldMouse, firstMouse;
+
+        public Vector2 GetNewMousePos() { return newMousePos; }
 
         public MyMouseControl()
         {

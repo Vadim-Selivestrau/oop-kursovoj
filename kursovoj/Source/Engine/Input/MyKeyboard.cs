@@ -17,9 +17,9 @@ namespace MyGame
     class MyKeyboard
     {
 
-        public KeyboardState newKeyboard, oldKeyboard;
+        private KeyboardState newKeyboard, oldKeyboard;
 
-        public List<MyKey> pressedKeys = new List<MyKey>(), previousPressedKeys = new List<MyKey>();
+        private List<MyKey> pressedKeys = new List<MyKey>(), previousPressedKeys = new List<MyKey>();
 
         public MyKeyboard()
         {
@@ -52,7 +52,7 @@ namespace MyGame
             for (int i = 0; i < pressedKeys.Count; i++)
             {
 
-                if (pressedKeys[i].key == KEY)
+                if (pressedKeys[i].GetKey() == KEY)
                 {
                     return true;
                 }
@@ -62,7 +62,15 @@ namespace MyGame
 
             return false;
         }
-
+        /*public bool IsKeyUp(System.Windows.Input.Key key);*/
+        public bool KeyUp()
+        {
+            if (newKeyboard == oldKeyboard)
+            {
+                return false;
+            }
+            return true;
+        }
 
         public virtual void GetPressedKeys()
         {

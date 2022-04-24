@@ -23,7 +23,7 @@ namespace MyGame
         {
             speed = 3.0f;
         }
-        public override void Update(Vector2 OFFSET, PlayerSpaceShip PLAYER)
+        public override void Update(Vector2 OFFSET, PLAYER PLAYER)
         {
              AI(PLAYER);
 
@@ -32,7 +32,7 @@ namespace MyGame
             base.Update(OFFSET);
         }
 
-        public virtual void AI(PlayerSpaceShip PLAYER)
+        public virtual void AI(PLAYER PLAYER)
         {
             pos = new Vector2 ((pos.X - speed),pos.Y);
         }

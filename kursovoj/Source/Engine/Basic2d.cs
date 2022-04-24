@@ -36,7 +36,7 @@ namespace MyGame
         {
 
         }
-        public virtual void Update(Vector2 OFFSET, PlayerSpaceShip PLAYER)
+        public virtual void Update(Vector2 OFFSET, PLAYER PLAYER)
         {
 
         }

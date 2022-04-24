@@ -20,20 +20,25 @@ namespace MyGame
     
     class World
     {
-        public Vector2 offset;
 
-        public PlayerSpaceShip playerSpaceShip;
+        public int numKilled;
+        private Vector2 offset;
+
+        private PLAYER playerSpaceShip;
+
+        private UI ui;
 
 
-        public List<Projectile> projectiles= new List<Projectile>();
+        private List<Projectile> projectiles= new List<Projectile>();
 
-        public List<Mob> mobs = new List<Mob>();
+        private List<Mob> mobs = new List<Mob>();
 
-        public List<SpawnPoint> spawnPoints= new List<SpawnPoint>();
+        private List<SpawnPoint> spawnPoints= new List<SpawnPoint>();
 
         public World()
         {
-            playerSpaceShip = new PlayerSpaceShip(@"D:\uni\4sem\OOP\kursovoj\kursovoj\Content\2d\VLADYM", new Vector2(50, 250), new Vector2(100, 100));
+            numKilled = 0;
+            playerSpaceShip = new PLAYER(@"D:\uni\4sem\OOP\kursovoj\kursovoj\Content\2d\VLADYM", new Vector2(50, 250), new Vector2(100, 100));
 
             GameGlobals.PassObjectile = AddProjectile;
             GameGlobals.PassMob = AddMob;
@@ -54,6 +59,8 @@ namespace MyGame
 
             spawnPoints.Add(new SpawnPoint(@"D:\uni\4sem\OOP\kursovoj\kursovoj\Content\2d\Mics\circle", new Vector2(Globals.screenWidth + 100, 100), new Vector2(100, 200)));
             spawnPoints[spawnPoints.Count - 1].spawnTimer.AddToTimer(2500);
+
+            ui = new UI();
         }
 
         public virtual void Update()
@@ -73,7 +80,7 @@ namespace MyGame
             {
                 projectiles[i].Update(offset, mobs.ToList<Unit>());
 
-                if (projectiles[i].done)
+                if (projectiles[i].GetDone())
                 {
                     projectiles.RemoveAt(i);
                     i--;
@@ -87,11 +94,12 @@ namespace MyGame
 
                 if (mobs[i].dead)
                 {
+                    numKilled++;
                     mobs.RemoveAt(i);
                     i--;
                 }
             }
-
+            ui.Update(this);
 
         }
 
@@ -130,6 +138,8 @@ namespace MyGame
             {
                 spawnPoints[i].Draw();
             }
+        
+            ui.Draw(this);
         }
     }
 }

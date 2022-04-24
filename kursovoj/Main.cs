@@ -106,7 +106,7 @@ namespace MyGame
 
             world.Draw();
 
-            cursor.Draw(new Vector2(Globals.mouse.newMousePos.X, Globals.mouse.newMousePos.Y), new Vector2(0, 0));
+            cursor.Draw(new Vector2(Globals.mouse.GetNewMousePos().X, Globals.mouse.GetNewMousePos().Y), new Vector2(0, 0));
             Globals.spriteBatch.End();
             
             

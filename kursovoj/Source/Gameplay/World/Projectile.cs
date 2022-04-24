@@ -18,15 +18,20 @@ namespace MyGame
 {
     class Projectile : Basic2d
     {
-        public bool done;
+        private bool done;
 
-        public Unit owner;
+        private Unit owner;
 
-        public Vector2 direction;
+        private Vector2 direction;
 
-        public float speed;
-        
-        public MyTimer timer;
+        private float speed;
+
+        private MyTimer timer;
+
+        public bool GetDone()
+        {
+            return done;
+        }
         
         public Projectile(string PATH, Vector2 POS, Vector2 DIMS, Unit OWNER, Vector2 TARGET)
             : base(PATH, POS, DIMS)
@@ -40,7 +45,7 @@ namespace MyGame
             direction = TARGET - owner.pos;
             direction.Normalize();
 
-            timer = new MyTimer(1200);
+            timer = new MyTimer(5000);
         }
 
         public virtual void Update(Vector2 OFFSET, List<Unit> UNITS)
@@ -49,15 +54,16 @@ namespace MyGame
 
             timer.UpdateTimer();
 
-           /* if (timer.Test())
+            if (timer.Test())
             {
                 done = true;
-            }*/
+            }
 
             if (HitSomething(UNITS))
             {
                 done = true;
             }
+            
 
         }
 
