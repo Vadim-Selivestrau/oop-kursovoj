@@ -19,7 +19,7 @@ namespace MyGame
     class GameGlobals
     {
 
-        public static PassObject PassObjectile, PassMob;
+        public static PassObject PassObjectile, PassMob, CheckCordon;
 
          
     }

@@ -27,24 +27,42 @@ namespace MyGame
 
         public override void Update(Vector2 OFFSET)
         {
+            bool checkCordon = false;
+
             if (Globals.keyboard.GetPress("W"))
             {
-                pos = new Vector2(pos.X, pos.Y - speed);
+                if (pos.Y > Globals.playerSize.Y / 2) 
+                { 
+                    pos = new Vector2(pos.X, pos.Y - speed);
+                    checkCordon = true; 
+                }
             }
 
             if (Globals.keyboard.GetPress("A"))
             {
-                pos = new Vector2(pos.X - speed, pos.Y);
+                if (pos.X > (Globals.playerSize.X / 2) - 5)
+                {
+                    pos = new Vector2(pos.X - speed, pos.Y);
+                    checkCordon = true;
+                }
             }
 
             if (Globals.keyboard.GetPress("S"))
             {
-                pos = new Vector2(pos.X, pos.Y + speed);
+                if (pos.Y < Globals.screenHeight - (Globals.playerSize.Y / 2))
+                {
+                    pos = new Vector2(pos.X, pos.Y + speed);
+                    checkCordon = true;
+                }
             }
 
             if (Globals.keyboard.GetPress("D"))
             {
-                pos = new Vector2(pos.X + speed, pos.Y);
+                if (pos.X < Globals.screenWidth - (Globals.playerSize.X / 2))
+                {
+                    pos = new Vector2(pos.X + speed, pos.Y);
+                    checkCordon = true;
+                }
             }
 
             if (Globals.keyboard.GetPress("Space"))
@@ -56,7 +74,10 @@ namespace MyGame
                 }
                 //GameGlobals.PassObjectile(new Bullet(new Vector2(pos.X, pos.Y), this, new Vector2(pos.X + Globals.screenHeight, pos.Y + 100)));
             }
-
+            if (checkCordon)
+            {
+                //GameGlobals.CheckCordon(pos);
+            }
 
             base.Update(OFFSET);
         }

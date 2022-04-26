@@ -25,6 +25,7 @@ namespace MyGame
         {
             Globals.screenWidth = 800; //1600
             Globals.screenHeight = 500; //900
+            Globals.playerSize = new Vector2(100,100);
 
             graphics.PreferredBackBufferWidth = Globals.screenWidth;
             graphics.PreferredBackBufferHeight = Globals.screenHeight;

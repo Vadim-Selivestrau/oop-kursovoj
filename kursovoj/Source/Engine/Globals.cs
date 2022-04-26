@@ -26,6 +26,7 @@ namespace MyGame
     class Globals
     {
         public static int screenHeight, screenWidth;
+        public static Vector2 playerSize;
 
         public static ContentManager content;
         public static SpriteBatch spriteBatch;

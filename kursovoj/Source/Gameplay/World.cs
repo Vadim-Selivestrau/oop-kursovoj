@@ -38,10 +38,11 @@ namespace MyGame
         public World()
         {
             numKilled = 0;
-            playerSpaceShip = new PLAYER(@"D:\uni\4sem\OOP\kursovoj\kursovoj\Content\2d\VLADYM", new Vector2(50, 250), new Vector2(100, 100));
+            playerSpaceShip = new PLAYER(@"D:\uni\4sem\OOP\kursovoj\kursovoj\Content\2d\VLADYM", new Vector2(50, 250), Globals.playerSize);
 
             GameGlobals.PassObjectile = AddProjectile;
             GameGlobals.PassMob = AddMob;
+            //GameGlobals.CheckCordon = CheckCordon;
 
             offset = new Vector2(0, 0);
 
@@ -140,6 +141,19 @@ namespace MyGame
             }
         
             ui.Draw(this);
+        }
+
+        public virtual void CheckCordon(object INFO) 
+        {
+            Vector2 tempPos = (Vector2)INFO;
+            if(tempPos.X < 0)
+            {
+                playerSpaceShip.speed = 0.2f;
+            }
+            else
+            {
+                playerSpaceShip.speed = 3.0f;
+            }
         }
     }
 }
