@@ -17,12 +17,15 @@ using Microsoft.Xna.Framework.Content;
 
 namespace MyGame
 {
-    class PLAYER : Unit
+    class PlayerSpaceShip : Unit
     {
-        public PLAYER(string PATH, Vector2 POS, Vector2 DIMS)
+        public PlayerSpaceShip(string PATH, Vector2 POS, Vector2 DIMS)
             :base(PATH, POS, DIMS)
         {
             speed = 3.0f;
+
+            health = 3;
+            healthMax = health;
         }
 
         public override void Update(Vector2 OFFSET)
@@ -67,12 +70,13 @@ namespace MyGame
 
             if (Globals.keyboard.GetPress("Space"))
             {
-                //GameGlobals.PassObjectile(new Bullet(new Vector2(pos.X, pos.Y), this, new Vector2(pos.X + Globals.screenHeight, pos.Y - 100)));
                 if (Globals.keyboard.KeyUp())
                 {
+                    //GameGlobals.PassObjectile(new Bullet(new Vector2(pos.X, pos.Y), this, new Vector2(pos.X + Globals.screenHeight, pos.Y - 100)));
                     GameGlobals.PassObjectile(new Bullet(new Vector2(pos.X, pos.Y), this, new Vector2(pos.X + Globals.screenHeight, pos.Y)));
+                    //GameGlobals.PassObjectile(new Bullet(new Vector2(pos.X, pos.Y), this, new Vector2(pos.X + Globals.screenHeight, pos.Y + 100)));
                 }
-                //GameGlobals.PassObjectile(new Bullet(new Vector2(pos.X, pos.Y), this, new Vector2(pos.X + Globals.screenHeight, pos.Y + 100)));
+
             }
             if (checkCordon)
             {

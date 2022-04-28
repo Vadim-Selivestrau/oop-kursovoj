@@ -13,6 +13,7 @@ namespace MyGame
 
         Basic2d cursor;
 
+        Color color = Color.White;
         public Main()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -107,7 +108,7 @@ namespace MyGame
 
             world.Draw();
 
-            cursor.Draw(new Vector2(Globals.mouse.GetNewMousePos().X, Globals.mouse.GetNewMousePos().Y), new Vector2(0, 0));
+            cursor.Draw(new Vector2(Globals.mouse.GetNewMousePos().X, Globals.mouse.GetNewMousePos().Y), new Vector2(0, 0), color);
             Globals.spriteBatch.End();
             
             

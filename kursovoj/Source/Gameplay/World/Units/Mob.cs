@@ -23,7 +23,7 @@ namespace MyGame
         {
             speed = 3.0f;
         }
-        public override void Update(Vector2 OFFSET, PLAYER PLAYER)
+        public override void Update(Vector2 OFFSET, PlayerSpaceShip PLAYER)
         {
              AI(PLAYER);
 
@@ -32,9 +32,26 @@ namespace MyGame
             base.Update(OFFSET);
         }
 
-        public virtual void AI(PLAYER PLAYER)
+        public virtual void AI(PlayerSpaceShip PLAYER)
         {
             pos = new Vector2 ((pos.X - speed),pos.Y);
+
+            if (Globals.GetDistance(pos, PLAYER.pos) < Globals.playerSize.X)
+            {
+                PLAYER.GetHit(1);
+                dead = true;
+            }
+
+
+            if(pos.X < 50)
+            {
+                dead = true;
+                
+            }
+           /* if (Globals.GetDistance(pos, new Vector2(Globals.screenHeight, Globals.screenWidth) )
+            {
+                /*counter - 50 score*/
+            //}
         }
 
 

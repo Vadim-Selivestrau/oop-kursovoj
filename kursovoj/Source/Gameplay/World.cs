@@ -24,10 +24,13 @@ namespace MyGame
         public int numKilled;
         private Vector2 offset;
 
-        private PLAYER playerSpaceShip;
+        private PlayerSpaceShip playerSpaceShip;
 
         private UI ui;
-
+        public PlayerSpaceShip GetPLAYER()
+        {
+            return playerSpaceShip;
+        }
 
         private List<Projectile> projectiles= new List<Projectile>();
 
@@ -38,7 +41,7 @@ namespace MyGame
         public World()
         {
             numKilled = 0;
-            playerSpaceShip = new PLAYER(@"D:\uni\4sem\OOP\kursovoj\kursovoj\Content\2d\VLADYM", new Vector2(50, 250), Globals.playerSize);
+            playerSpaceShip = new PlayerSpaceShip(@"D:\uni\4sem\OOP\kursovoj\kursovoj\Content\2d\VLADYM", new Vector2(50, 250), Globals.playerSize);
 
             GameGlobals.PassObjectile = AddProjectile;
             GameGlobals.PassMob = AddMob;
@@ -84,7 +87,7 @@ namespace MyGame
                 if (projectiles[i].GetDone())
                 {
                     projectiles.RemoveAt(i);
-                    i--;
+                    i--;                    
                 }
             }
 

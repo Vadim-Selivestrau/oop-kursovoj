@@ -74,7 +74,7 @@ namespace MyGame
             {
                 if (Globals.GetDistance(pos, UNITS[i].pos) < UNITS[i].hitDistance)
                 {
-                    UNITS[i].GetHit();
+                    UNITS[i].GetHit(1);
                     return true;
                 }
             }

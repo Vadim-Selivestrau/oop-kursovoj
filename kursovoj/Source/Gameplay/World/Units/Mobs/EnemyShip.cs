@@ -25,7 +25,7 @@ namespace MyGame
             speed = 5.0f;
         }
 
-        public override void Update(Vector2 OFFSET, PLAYER PLAYER)
+        public override void Update(Vector2 OFFSET, PlayerSpaceShip PLAYER)
         {
 
             base.Update(OFFSET, PLAYER);

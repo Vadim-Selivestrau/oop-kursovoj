@@ -21,13 +21,16 @@ namespace MyGame
     {
         public bool dead;
 
-        public float speed, hitDistance;
+        public float speed, hitDistance, health, healthMax;
         public Unit(string PATH, Vector2 POS, Vector2 DIMS)
             :base(PATH, POS, DIMS)
         {
             dead = false;
 
             speed = 3.0f;
+
+            health = 1;
+            healthMax = health;
 
             hitDistance = 35.0f;
         }
@@ -43,9 +46,14 @@ namespace MyGame
             base.Draw();
         }
 
-        public virtual void GetHit()
+        public virtual void GetHit(float DAMAGE)
         {
-            dead = true;
+            health -= DAMAGE;
+
+            if(health <= 0)
+            { 
+                dead = true; 
+            }
         }
 
 

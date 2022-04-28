@@ -10,7 +10,7 @@
   <Class Name="MyGame.MyKeyboard" Collapsed="true">
     <Position X="18.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAIAAAAAAAAAAAAAAAIAAAABCAEAAAAAAAAAAkAA=</HashCode>
+      <HashCode>AAQAAIAAAAAAAAAAAAgAAIAAAABCAEAAAAAAAAAAkAA=</HashCode>
       <FileName>Source\Engine\Input\MyKeyboard.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -31,7 +31,7 @@
   <Class Name="MyGame.Globals" Collapsed="true">
     <Position X="15" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAEBIAABAAAgAAAAAAEAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <HashCode>AAACAEBIAABAAAgAAAAAAEAAAAAAAAgAAAAAQAAAAAA=</HashCode>
       <FileName>Source\Engine\Globals.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -59,11 +59,11 @@
   <Class Name="MyGame.Mob" Collapsed="true">
     <Position X="5.75" Y="5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AQQAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Source\Gameplay\World\Units\Mob.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MyGame.PLAYER" Collapsed="true">
+  <Class Name="MyGame.PlayerSpaceShip" Collapsed="true">
     <Position X="8.75" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
@@ -87,35 +87,35 @@
   <Class Name="MyGame.UI" Collapsed="true">
     <Position X="22.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAYAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAYAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
       <FileName>Source\Gameplay\World\UI.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame.Unit" Collapsed="true">
     <Position X="6.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAACAAAQAIAAAAAAACAAA=</HashCode>
+      <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAACAAAQAIAAAAAAACIAg=</HashCode>
       <FileName>Source\Gameplay\World\Unit.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame.World">
     <Position X="23" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AASAAAAEAAAQEgAAACAAAAAAAAACAAAAAABCAAAAAAA=</HashCode>
+      <HashCode>AASAAAAEAAAQEgACACAAAAAAAAACAAABAAFCAAAAAAA=</HashCode>
       <FileName>Source\Gameplay\World.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame.GameGlobals" Collapsed="true">
     <Position X="21" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAQAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAACAAAAAAAAAAAAgAAAAQAAAAAAAAA=</HashCode>
       <FileName>GameGlobals.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame.Main" Collapsed="true">
     <Position X="16.75" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAEEAAAAAAAwEAAAAAAAAAAAAAAAgAAAAAAAAAAAQ=</HashCode>
+      <HashCode>AAQAEEAAAAAAAwEAAAAAAAAAAAAAAAiAAAAAAAAAAAQ=</HashCode>
       <FileName>Main.cs</FileName>
     </TypeIdentifier>
   </Class>
