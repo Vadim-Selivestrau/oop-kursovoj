@@ -33,13 +33,14 @@ namespace MyGame
         }
 
         private List<Projectile> projectiles= new List<Projectile>();
-
         private List<Mob> mobs = new List<Mob>();
-
         private List<SpawnPoint> spawnPoints= new List<SpawnPoint>();
 
-        public World()
+        PassObject ResetWorld;
+
+        public World(PassObject RESETWORLD)
         {
+            ResetWorld = RESETWORLD;
             numKilled = 0;
             playerSpaceShip = new PlayerSpaceShip(@"D:\uni\4sem\OOP\kursovoj\kursovoj\Content\2d\VLADYM", new Vector2(50, 250), Globals.playerSize);
 
@@ -69,38 +70,48 @@ namespace MyGame
 
         public virtual void Update()
         {
-            playerSpaceShip.Update(offset);
-
-            for (int i = 0; i < spawnPoints.Count; i++)
+            if (!playerSpaceShip.dead) 
             {
-                spawnPoints[i].Update(offset);
+                playerSpaceShip.Update(offset);
 
-               
-            }
-
-
-
-            for (int i = 0; i < projectiles.Count; i++)
-            {
-                projectiles[i].Update(offset, mobs.ToList<Unit>());
-
-                if (projectiles[i].GetDone())
+                for (int i = 0; i < spawnPoints.Count; i++)
                 {
-                    projectiles.RemoveAt(i);
-                    i--;                    
+                    spawnPoints[i].Update(offset);
+
+
                 }
-            }
 
 
-            for (int i = 0; i < mobs.Count; i++)
-            {
-                mobs[i].Update(offset, playerSpaceShip);
 
-                if (mobs[i].dead)
+                for (int i = 0; i < projectiles.Count; i++)
                 {
-                    numKilled++;
-                    mobs.RemoveAt(i);
-                    i--;
+                    projectiles[i].Update(offset, mobs.ToList<Unit>());
+
+                    if (projectiles[i].GetDone())
+                    {
+                        projectiles.RemoveAt(i);
+                        i--;
+                    }
+                }
+
+
+                for (int i = 0; i < mobs.Count; i++)
+                {
+                    mobs[i].Update(offset, playerSpaceShip);
+
+                    if (mobs[i].dead)
+                    {
+                        numKilled++;//not correctly works
+                        mobs.RemoveAt(i);
+                        i--;
+                    }
+                } 
+            }
+            else
+            {
+                if (Globals.keyboard.GetPress("Enter"))
+                {
+                    ResetWorld(null);
                 }
             }
             ui.Update(this);
@@ -142,7 +153,10 @@ namespace MyGame
             {
                 spawnPoints[i].Draw();
             }
-        
+
+
+            
+
             ui.Draw(this);
         }
 

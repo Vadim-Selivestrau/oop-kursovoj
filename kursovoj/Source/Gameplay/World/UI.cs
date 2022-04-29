@@ -42,6 +42,15 @@ namespace MyGame
             Globals.spriteBatch.DrawString(font, tempStr, new Vector2(Globals.screenWidth/2-strDims.X/2, 20) ,Color.Black);
 
             healthBar.Draw(new Vector2(20, Globals.screenHeight - 40));
+
+
+            if (WORLD.GetPLAYER().dead)
+            {
+                tempStr = "YOU DIE";
+                strDims = font.MeasureString(tempStr);
+                Globals.spriteBatch.DrawString(font, tempStr, new Vector2(Globals.screenWidth / 2 - strDims.X / 2, Globals.screenHeight/2), Color.Red);
+
+            }
         }
 
     }

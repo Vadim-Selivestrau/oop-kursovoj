@@ -9,7 +9,7 @@ namespace MyGame
         SpriteBatch spriteBatch;
         GraphicsDeviceManager graphics;
         
-        World world;
+        GamePlay gamePlay;
 
         Basic2d cursor;
 
@@ -57,7 +57,7 @@ namespace MyGame
 
 
 
-            world = new World();
+            gamePlay = new GamePlay();
         
         }
 
@@ -80,7 +80,7 @@ namespace MyGame
             Globals.mouse.Update();
 
 
-            world.Update();
+            gamePlay.Update();
 
             
             Globals.keyboard.UpdateOld();
@@ -106,7 +106,7 @@ namespace MyGame
             Globals.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend);
 
 
-            world.Draw();
+            gamePlay.Draw();
 
             cursor.Draw(new Vector2(Globals.mouse.GetNewMousePos().X, Globals.mouse.GetNewMousePos().Y), new Vector2(0, 0), color);
             Globals.spriteBatch.End();
