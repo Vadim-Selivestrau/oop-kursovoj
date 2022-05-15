@@ -3,7 +3,7 @@
   <Class Name="MyGame.Projectile" Collapsed="true">
     <Position X="10.25" Y="2.5" Width="1.25" />
     <TypeIdentifier>
-      <HashCode>AAQAAACAQAAA4gAAAAAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAQAAACAQAAA4gAAAAAAAAAAAAAAAQAAAAAAACAAAAA=</HashCode>
       <FileName>Source\Gameplay\World\Projectile.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -36,7 +36,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame.Basic2d" Collapsed="true">
-    <Position X="14.5" Y="1.25" Width="1.25" />
+    <Position X="14.5" Y="1" Width="1.25" />
     <TypeIdentifier>
       <HashCode>CEQAAAAAAAAAAgAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Source\Engine\Basic2d.cs</FileName>
@@ -45,7 +45,7 @@
   <Class Name="MyGame.Globals" Collapsed="true">
     <Position X="25.75" Y="0.5" Width="1.25" />
     <TypeIdentifier>
-      <HashCode>AAACAEBIAABAAAgAAAAAAEAAAAAAAAgAAAAAQAAAAAA=</HashCode>
+      <HashCode>AAACAMBIAABAAAgAAAAAAEAAAAAAAAgAAAAAQAAAAAA=</HashCode>
       <FileName>Source\Engine\Globals.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -59,7 +59,7 @@
   <Class Name="MyGame.AIPlayer" Collapsed="true">
     <Position X="8.25" Y="2.5" Width="1.25" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAA=</HashCode>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Source\Gameplay\World\Players\AIPlayer.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -77,22 +77,22 @@
       <FileName>Source\Gameplay\World\Projectiles\Bullet.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MyGame.EnemyShip" Collapsed="true">
-    <Position X="14.5" Y="5.5" Width="1.25" />
+  <Class Name="MyGame.LittleShip" Collapsed="true">
+    <Position X="17" Y="8" Width="1.25" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Source\Gameplay\World\Units\Mobs\EnemyShip.cs</FileName>
+      <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Source\Gameplay\World\Units\Mobs\LittleShip.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame.Mob" Collapsed="true">
-    <Position X="14.5" Y="4" Width="1.25" />
+    <Position X="17" Y="7" Width="1.25" />
     <TypeIdentifier>
       <HashCode>AQQAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Source\Gameplay\World\Units\Mob.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame.PlayerSpaceShip" Collapsed="true">
-    <Position X="18" Y="4" Width="1.25" />
+    <Position X="19.75" Y="7" Width="1.25" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Source\Gameplay\World\Units\PlayerSpaceShip.cs</FileName>
@@ -101,15 +101,15 @@
   <Class Name="MyGame.Player" Collapsed="true">
     <Position X="7.25" Y="1.25" Width="1.25" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAQAgAAAAAAAAAAAQASAAAAAAAAACAAAAA=</HashCode>
+      <HashCode>AAQAAAAAAAAQAgAAAAAAAAAAAQASAAAAAAAAACAAggA=</HashCode>
       <FileName>Source\Gameplay\World\Player.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MyGame.SpawnPoint" Collapsed="true">
-    <Position X="12.75" Y="2.5" Width="1.25" />
+  <Class Name="MyGame.SpawnEgg" Collapsed="true">
+    <Position X="12.75" Y="5" Width="1.25" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAICAAAAAIAAEAAAACAAA=</HashCode>
-      <FileName>Source\Gameplay\World\SpawnPoint.cs</FileName>
+      <HashCode>AAQAAAAAAAAAAgAAAAAAAABAIgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\Gameplay\World\SpawnPoints\SpawnEgg.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame.UI" Collapsed="true">
@@ -120,9 +120,9 @@
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame.Unit" Collapsed="true">
-    <Position X="16.25" Y="2.5" Width="1.25" />
+    <Position X="18.25" Y="5" Width="1.25" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAACAAAQAIAAAAAAACIAg=</HashCode>
+      <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Source\Gameplay\World\Unit.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -143,7 +143,7 @@
   <Class Name="MyGame.GameGlobals" Collapsed="true">
     <Position X="22.25" Y="0.5" Width="1.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAACAAAIAAAAAAAAgAAAAQAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAACAAAIAAEAAAAAgAAAAQAAAAAAAAA=</HashCode>
       <FileName>GameGlobals.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -159,6 +159,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyGame.AttackableObject" Collapsed="true">
+    <Position X="16.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAwAAAAAAAAAAgAAAAAAAAAAACAAAQAIAAAAAAACIAg=</HashCode>
+      <FileName>Source\Gameplay\World\AttackableObject.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Delegate Name="MyGame.PassObject" Collapsed="true">

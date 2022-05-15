@@ -19,12 +19,12 @@ namespace MyGame
 {
     class PlayerSpaceShip : Unit
     {
-        public PlayerSpaceShip(string PATH, Vector2 POS, Vector2 DIMS)
-            :base(PATH, POS, DIMS)
+        public PlayerSpaceShip(string PATH, Vector2 POS, Vector2 DIMS, int OWNERID)
+            :base(PATH, POS, DIMS, OWNERID)
         {
             speed = 3.0f;
 
-            health = 3;
+            health = 300;
             healthMax = health;
         }
 
@@ -72,9 +72,9 @@ namespace MyGame
             {
                 if (Globals.keyboard.KeyUp())
                 {
-                    //GameGlobals.PassObjectile(new Bullet(new Vector2(pos.X, pos.Y), this, new Vector2(pos.X + Globals.screenHeight, pos.Y - 100)));
+                    GameGlobals.PassObjectile(new Bullet(new Vector2(pos.X, pos.Y), this, new Vector2(pos.X + Globals.screenHeight, pos.Y - 100)));
                     GameGlobals.PassObjectile(new Bullet(new Vector2(pos.X, pos.Y), this, new Vector2(pos.X + Globals.screenHeight, pos.Y)));
-                    //GameGlobals.PassObjectile(new Bullet(new Vector2(pos.X, pos.Y), this, new Vector2(pos.X + Globals.screenHeight, pos.Y + 100)));
+                    GameGlobals.PassObjectile(new Bullet(new Vector2(pos.X, pos.Y), this, new Vector2(pos.X + Globals.screenHeight, pos.Y + 100)));
                 }
 
             }

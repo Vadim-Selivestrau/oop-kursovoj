@@ -18,9 +18,9 @@ namespace MyGame
 {
     class User : Player
     {
-        public User() : base()
+        public User(int ID) : base(ID)
         {
-            playerSpaceShip = new PlayerSpaceShip(@"D:\uni\4sem\OOP\kursovoj\kursovoj\Content\2d\VLADYM", new Vector2(50, 250), Globals.playerSize);
+            playerSpaceShip = new PlayerSpaceShip(@"D:\uni\4sem\OOP\kursovoj\kursovoj\Content\2d\VLADYM", new Vector2(50, 250), Globals.playerSize, id);
 
         }
 

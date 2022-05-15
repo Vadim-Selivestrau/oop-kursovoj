@@ -17,27 +17,31 @@ using Microsoft.Xna.Framework.Content;
 
 namespace MyGame
 {
-    class Unit : AttackableObject
+    class LittleShip : Mob
     {
-        
-        public Unit(string PATH, Vector2 POS, Vector2 DIMS, int OWNERID)
-            :base(PATH, POS, DIMS, OWNERID)
+
+        public MyTimer spawnTimer;
+        public LittleShip(Vector2 POS, int OWNERID)
+            : base(@"D:\uni\4sem\OOP\kursovoj\kursovoj\Content\2d\Units\Mobs\spaceship2", POS, new Vector2(50,50), OWNERID)
+        {
+            speed = 4.0f;
+            
+
+        }
+
+        public override void Update(Vector2 OFFSET, Player ENEMY)
         {
             
+            
+
+            base.Update(OFFSET, ENEMY);
         }
 
-        public virtual void Update(Vector2 OFFSET, Player ENEMY)
-        {
-
-            base.Update(OFFSET);
-        }
-
+       
         public override void Draw()
         {
             base.Draw();
         }
-
-        
 
 
     }

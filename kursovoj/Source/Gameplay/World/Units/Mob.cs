@@ -18,8 +18,8 @@ namespace MyGame
 {
     class Mob : Unit
     {
-        public Mob(string PATH, Vector2 POS, Vector2 DIMS)
-            : base(PATH, POS, DIMS)
+        public Mob(string PATH, Vector2 POS, Vector2 DIMS, int OWNERID)
+            : base(PATH, POS, DIMS, OWNERID)
         {
             speed = 3.0f;
         }

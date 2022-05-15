@@ -20,7 +20,7 @@ namespace MyGame
     {
         public static int score = 0;
 
-        public static PassObject PassObjectile, PassMob, CheckCordon;
+        public static PassObject PassObjectile, PassMob, PassSpawnPoint, CheckCordon;
 
          
     }

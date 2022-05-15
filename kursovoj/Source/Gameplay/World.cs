@@ -48,11 +48,14 @@ namespace MyGame
             
             GameGlobals.PassObjectile = AddProjectile;
             GameGlobals.PassMob = AddMob;
+            GameGlobals.PassSpawnPoint = AddSpawnPoint;
+
+
             //GameGlobals.CheckCordon = CheckCordon;
 
 
-            user = new User();
-            aIPlayer = new AIPlayer();
+            user = new User(1);
+            aIPlayer = new AIPlayer(2);
 
 
             offset = new Vector2(0, 0);
@@ -102,6 +105,19 @@ namespace MyGame
 
         public virtual void AddMob(object INFO)
         {
+            Unit tempUnit = (Unit)INFO;
+
+
+            if (user.id == tempUnit.ownerId)
+            {
+                user.AddUnit(tempUnit);
+            }
+            else if (aIPlayer.id == tempUnit.ownerId)
+            {
+                aIPlayer.AddUnit(tempUnit); 
+            }
+
+
             aIPlayer.AddUnit((Mob)INFO);
         }
 
@@ -111,6 +127,23 @@ namespace MyGame
             projectiles.Add((Projectile)INFO);
         }
 
+
+        public virtual void AddSpawnPoint(object INFO)
+        {
+            SpawnPoint tempSpawnPoint = (SpawnPoint)INFO;
+
+
+            if (user.id == tempSpawnPoint.ownerId)
+            {
+                user.AddSpawnPoint(tempSpawnPoint);
+            }
+            else if (aIPlayer.id == tempSpawnPoint.ownerId)
+            {
+                aIPlayer.AddSpawnPoint(tempSpawnPoint);
+            }
+
+
+        }
 
 
         public virtual void Draw()

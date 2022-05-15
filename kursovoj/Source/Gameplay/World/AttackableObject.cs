@@ -17,13 +17,26 @@ using Microsoft.Xna.Framework.Content;
 
 namespace MyGame
 {
-    class Unit : AttackableObject
+    class AttackableObject : Basic2d
     {
-        
-        public Unit(string PATH, Vector2 POS, Vector2 DIMS, int OWNERID)
-            :base(PATH, POS, DIMS, OWNERID)
+        public bool dead;
+
+        public int ownerId;
+
+        public float speed, hitDistance, health, healthMax;
+        public AttackableObject(string PATH, Vector2 POS, Vector2 DIMS, int OWNERID)
+            :base(PATH, POS, DIMS)
         {
-            
+            ownerId = OWNERID;
+
+            dead = false;
+
+            speed = 3.0f;
+
+            health = 1;
+            healthMax = health;
+
+            hitDistance = 35.0f;
         }
 
         public virtual void Update(Vector2 OFFSET, Player ENEMY)
@@ -37,7 +50,15 @@ namespace MyGame
             base.Draw();
         }
 
-        
+        public virtual void GetHit(float DAMAGE)
+        {
+            health -= DAMAGE;
+
+            if(health <= 0)
+            { 
+                dead = true; 
+            }
+        }
 
 
     }

@@ -17,42 +17,46 @@ using Microsoft.Xna.Framework.Content;
 
 namespace MyGame
 {
-    class SpawnPoint : AttackableObject
+    class SpawnShip : Mob
     {
 
-
-        public MyTimer spawnTimer = new MyTimer(2200);
-        public SpawnPoint(string PATH, Vector2 POS, Vector2 DIMS, int OWNERID)
-            : base(PATH, POS, DIMS, OWNERID)
+        public MyTimer spawnTimer;
+        public SpawnShip(Vector2 POS, int OWNERID)
+            : base(@"D:\uni\4sem\OOP\kursovoj\kursovoj\Content\2d\Units\Mobs\ENEMYSHIP", POS, new Vector2(100,100), OWNERID)
         {
+            speed = 2.0f;
+            
             health = 3;
             healthMax = health;
-            
 
-            hitDistance = 35.0f;
+
+            spawnTimer = new MyTimer(8000);
+            spawnTimer.AddToTimer(4000);
         }
 
-        public override void Update(Vector2 OFFSET)
+        public override void Update(Vector2 OFFSET, Player ENEMY)
         {
             spawnTimer.UpdateTimer();
 
             if (spawnTimer.Test())
             {
-                SpawnMob();
+                SpawnEgg();
                 spawnTimer.ResetToZero();
             }
+            
 
-            base.Update(OFFSET);
+            base.Update(OFFSET, ENEMY);
         }
 
+        public virtual void SpawnEgg()
+        {
+            GameGlobals.PassSpawnPoint(new SpawnEgg(new Vector2(pos.X, pos.Y), ownerId));
+        }
         public override void Draw()
         {
             base.Draw();
         }
 
-        public virtual void SpawnMob()
-        {
-            GameGlobals.PassMob(new EnemyShip(new Vector2(pos.X, pos.Y), ownerId));
-        }
+
     }
 }

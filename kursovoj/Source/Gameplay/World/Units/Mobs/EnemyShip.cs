@@ -19,10 +19,10 @@ namespace MyGame
 {
     class EnemyShip : Mob
     {
-        public EnemyShip(Vector2 POS)
-            : base(@"D:\uni\4sem\OOP\kursovoj\kursovoj\Content\2d\Units\Mobs\shiprot", POS, new Vector2(250,250))
+        public EnemyShip(Vector2 POS, int OWNERID)
+            : base(@"D:\uni\4sem\OOP\kursovoj\kursovoj\Content\2d\Units\Mobs\shiprot", POS, new Vector2(250,250), OWNERID)
         {
-            speed = 5.0f;
+            speed = 3.0f;
         }
 
         public override void Update(Vector2 OFFSET, Player ENEMY)

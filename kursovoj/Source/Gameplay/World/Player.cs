@@ -18,12 +18,13 @@ namespace MyGame
 {
     class Player
     {
+        public int id;
         public PlayerSpaceShip playerSpaceShip;
         public List<Unit> units = new List<Unit>();
         public List<SpawnPoint> spawnPoints = new List<SpawnPoint>();
-        public Player()
+        public Player(int ID)
         {
-               
+            id = ID;
         }
 
         public virtual void Update(Player ENEMY, Vector2 OFFSET)
@@ -33,13 +34,27 @@ namespace MyGame
                 playerSpaceShip.Update(OFFSET);
             }
 
+
+            for(int i = 0; i < spawnPoints.Count; i++)
+            {
+                spawnPoints[i].Update(OFFSET);
+
+                if (spawnPoints[i].dead)
+                {
+                    spawnPoints.RemoveAt(i);
+                    i--;
+                }
+            }
+
+
+
             for (int i = 0; i < units.Count; i++)
             {
                 units[i].Update(OFFSET, ENEMY);
 
                 if (units[i].dead)
                 {
-                    ChangeScore(1);//numKilled++;//not correctly works
+                    ChangeScore(1);
                     units.RemoveAt(i);
                     i--;
                 }
@@ -49,12 +64,22 @@ namespace MyGame
 
         public virtual void AddUnit(object INFO)
         {
-            units.Add((Unit)INFO);
+            Unit tempUnit = (Unit)INFO;
+            tempUnit.ownerId = id;
+            units.Add(tempUnit);
+        }
+
+        public virtual void AddSpawnPoint(object INFO)
+        {
+            SpawnPoint tempSpawnPoint = (SpawnPoint)INFO;
+            tempSpawnPoint.ownerId = id; 
+
+            spawnPoints.Add(tempSpawnPoint);
         }
 
         public virtual void ChangeScore(int SCORE)
         {
-
+            
         }
         public virtual void Draw(Vector2 OFFSET)
         {

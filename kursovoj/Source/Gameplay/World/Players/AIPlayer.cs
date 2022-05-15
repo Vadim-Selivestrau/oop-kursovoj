@@ -18,21 +18,22 @@ namespace MyGame
 {
     class AIPlayer : Player
     {
-        public AIPlayer() : base()
+        public AIPlayer(int ID) 
+            : base(ID)
         {
-            spawnPoints.Add(new SpawnPoint(@"D:\uni\4sem\OOP\kursovoj\kursovoj\Content\2d\Mics\circle", new Vector2(Globals.screenWidth + 100, 200), new Vector2(100, 200)));
+            spawnPoints.Add(new Portal(new Vector2(Globals.screenWidth + 100, 200), id));
 
 
-            spawnPoints.Add(new SpawnPoint(@"D:\uni\4sem\OOP\kursovoj\kursovoj\Content\2d\Mics\circle", new Vector2(Globals.screenWidth + 100, 300), new Vector2(100, 200)));
+            spawnPoints.Add(new Portal(new Vector2(Globals.screenWidth + 100, 300), id));
             spawnPoints[spawnPoints.Count - 1].spawnTimer.AddToTimer(500);
 
-            spawnPoints.Add(new SpawnPoint(@"D:\uni\4sem\OOP\kursovoj\kursovoj\Content\2d\Mics\circle", new Vector2(Globals.screenWidth + 100, 400), new Vector2(100, 200)));
+            spawnPoints.Add(new Portal(new Vector2(Globals.screenWidth + 100, 400), id));
             spawnPoints[spawnPoints.Count - 1].spawnTimer.AddToTimer(1000);
 
-            spawnPoints.Add(new SpawnPoint(@"D:\uni\4sem\OOP\kursovoj\kursovoj\Content\2d\Mics\circle", new Vector2(Globals.screenWidth + 100, 500), new Vector2(100, 200)));
+            spawnPoints.Add(new Portal(new Vector2(Globals.screenWidth + 100, 500), id));
             spawnPoints[spawnPoints.Count - 1].spawnTimer.AddToTimer(3000);
 
-            spawnPoints.Add(new SpawnPoint(@"D:\uni\4sem\OOP\kursovoj\kursovoj\Content\2d\Mics\circle", new Vector2(Globals.screenWidth + 100, 100), new Vector2(100, 200)));
+            spawnPoints.Add(new Portal(new Vector2(Globals.screenWidth + 100, 100), id));
             spawnPoints[spawnPoints.Count - 1].spawnTimer.AddToTimer(2500);
 
         }
