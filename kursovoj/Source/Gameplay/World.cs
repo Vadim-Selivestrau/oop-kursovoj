@@ -21,71 +21,62 @@ namespace MyGame
     class World
     {
 
-        public int numKilled;
         private Vector2 offset;
 
-        private PlayerSpaceShip playerSpaceShip;
+        
 
         private UI ui;
-        public PlayerSpaceShip GetPLAYER()
-        {
-            return playerSpaceShip;
-        }
+
+
+        public User user;
+
+        public AIPlayer aIPlayer;
+
+
+
+        
 
         private List<Projectile> projectiles= new List<Projectile>();
-        private List<Mob> mobs = new List<Mob>();
-        private List<SpawnPoint> spawnPoints= new List<SpawnPoint>();
+        
+        
 
         PassObject ResetWorld;
 
         public World(PassObject RESETWORLD)
         {
             ResetWorld = RESETWORLD;
-            numKilled = 0;
-            playerSpaceShip = new PlayerSpaceShip(@"D:\uni\4sem\OOP\kursovoj\kursovoj\Content\2d\VLADYM", new Vector2(50, 250), Globals.playerSize);
-
+            
             GameGlobals.PassObjectile = AddProjectile;
             GameGlobals.PassMob = AddMob;
             //GameGlobals.CheckCordon = CheckCordon;
 
+
+            user = new User();
+            aIPlayer = new AIPlayer();
+
+
             offset = new Vector2(0, 0);
 
-            spawnPoints.Add(new SpawnPoint(@"D:\uni\4sem\OOP\kursovoj\kursovoj\Content\2d\Mics\circle", new Vector2(Globals.screenWidth + 100, 200), new Vector2(100, 200)));
-
-
-            spawnPoints.Add(new SpawnPoint(@"D:\uni\4sem\OOP\kursovoj\kursovoj\Content\2d\Mics\circle", new Vector2(Globals.screenWidth + 100, 300), new Vector2(100, 200)));
-            spawnPoints[spawnPoints.Count - 1].spawnTimer.AddToTimer(500);
-
-            spawnPoints.Add(new SpawnPoint(@"D:\uni\4sem\OOP\kursovoj\kursovoj\Content\2d\Mics\circle", new Vector2(Globals.screenWidth + 100, 400), new Vector2(100, 200)));
-            spawnPoints[spawnPoints.Count - 1].spawnTimer.AddToTimer(1000);
-
-            spawnPoints.Add(new SpawnPoint(@"D:\uni\4sem\OOP\kursovoj\kursovoj\Content\2d\Mics\circle", new Vector2(Globals.screenWidth + 100, 500), new Vector2(100, 200)));
-            spawnPoints[spawnPoints.Count - 1].spawnTimer.AddToTimer(3000);
-
-            spawnPoints.Add(new SpawnPoint(@"D:\uni\4sem\OOP\kursovoj\kursovoj\Content\2d\Mics\circle", new Vector2(Globals.screenWidth + 100, 100), new Vector2(100, 200)));
-            spawnPoints[spawnPoints.Count - 1].spawnTimer.AddToTimer(2500);
+            
 
             ui = new UI();
         }
 
         public virtual void Update()
         {
-            if (!playerSpaceShip.dead) 
+            if (!user.playerSpaceShip.dead) 
             {
-                playerSpaceShip.Update(offset);
+                user.Update(aIPlayer, offset);
+                aIPlayer.Update(user, offset);
 
-                for (int i = 0; i < spawnPoints.Count; i++)
-                {
-                    spawnPoints[i].Update(offset);
-
-
-                }
+                
+                
 
 
 
                 for (int i = 0; i < projectiles.Count; i++)
                 {
-                    projectiles[i].Update(offset, mobs.ToList<Unit>());
+                    projectiles[i].Update(offset, aIPlayer.units.ToList<Unit>());
 
                     if (projectiles[i].GetDone())
                     {
@@ -95,17 +86,7 @@ namespace MyGame
                 }
 
 
-                for (int i = 0; i < mobs.Count; i++)
-                {
-                    mobs[i].Update(offset, playerSpaceShip);
-
-                    if (mobs[i].dead)
-                    {
-                        numKilled++;//not correctly works
-                        mobs.RemoveAt(i);
-                        i--;
-                    }
-                } 
+                
             }
             else
             {
@@ -121,7 +102,7 @@ namespace MyGame
 
         public virtual void AddMob(object INFO)
         {
-            mobs.Add((Mob)INFO);
+            aIPlayer.AddUnit((Mob)INFO);
         }
 
 
@@ -134,28 +115,17 @@ namespace MyGame
 
         public virtual void Draw()
         {
-            playerSpaceShip.Draw();
+            
+            user.Draw(offset);
 
             
+            aIPlayer.Draw(offset);
 
             for (int i = 0; i < projectiles.Count; i++)
             {
                 projectiles[i].Draw();
             }
 
-            for (int i = 0; i < mobs.Count; i++)
-            {
-                mobs[i].Draw();
-            }
-
-
-            for (int i = 0; i < spawnPoints.Count; i++)
-            {
-                spawnPoints[i].Draw();
-            }
-
-
-            
 
             ui.Draw(this);
         }
@@ -165,11 +135,11 @@ namespace MyGame
             Vector2 tempPos = (Vector2)INFO;
             if(tempPos.X < 0)
             {
-                playerSpaceShip.speed = 0.2f;
+                user.playerSpaceShip.speed = 0.2f;
             }
             else
             {
-                playerSpaceShip.speed = 3.0f;
+                user.playerSpaceShip.speed = 3.0f;
             }
         }
     }

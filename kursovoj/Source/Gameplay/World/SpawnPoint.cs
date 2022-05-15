@@ -21,7 +21,7 @@ namespace MyGame
     {
         private bool dead;
 
-        private float speed, hitDistance;
+        private float hitDistance;
 
         public MyTimer spawnTimer = new MyTimer(2200);
         public SpawnPoint(string PATH, Vector2 POS, Vector2 DIMS)

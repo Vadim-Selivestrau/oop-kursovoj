@@ -26,27 +26,27 @@ namespace MyGame
         {
             font = Globals.content.Load<SpriteFont>(@"D:\uni\4sem\OOP\kursovoj\kursovoj\Content\bin\MyFont");
 
-            healthBar = new QuantityDisplayBar(new Vector2(100, 16), 2 , Color.Red);
+            healthBar = new QuantityDisplayBar(new Vector2(100, 25), 2 , Color.White);
         }
 
 
         public void Update(World WORLD)
         {
-            healthBar.Update(WORLD.GetPLAYER().health, WORLD.GetPLAYER().healthMax);
+            healthBar.Update(WORLD.user.playerSpaceShip.health, WORLD.user.playerSpaceShip.healthMax);
         }
 
         public void Draw(World WORLD)
         {
-            string tempStr = "num kills = " + WORLD.numKilled;
+            string tempStr = "score = " + GameGlobals.score;
             Vector2 strDims = font.MeasureString(tempStr);
             Globals.spriteBatch.DrawString(font, tempStr, new Vector2(Globals.screenWidth/2-strDims.X/2, 20) ,Color.Black);
 
             healthBar.Draw(new Vector2(20, Globals.screenHeight - 40));
 
 
-            if (WORLD.GetPLAYER().dead)
+            if (WORLD.user.playerSpaceShip.dead)
             {
-                tempStr = "YOU DIE";
+                tempStr = "YOU DIED";
                 strDims = font.MeasureString(tempStr);
                 Globals.spriteBatch.DrawString(font, tempStr, new Vector2(Globals.screenWidth / 2 - strDims.X / 2, Globals.screenHeight/2), Color.Red);
 

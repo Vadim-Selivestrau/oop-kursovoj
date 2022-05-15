@@ -20,15 +20,15 @@ namespace MyGame
     class EnemyShip : Mob
     {
         public EnemyShip(Vector2 POS)
-            : base(@"D:\uni\4sem\OOP\kursovoj\kursovoj\Content\2d\Units\shiprot", POS, new Vector2(250,250))
+            : base(@"D:\uni\4sem\OOP\kursovoj\kursovoj\Content\2d\Units\Mobs\shiprot", POS, new Vector2(250,250))
         {
             speed = 5.0f;
         }
 
-        public override void Update(Vector2 OFFSET, PlayerSpaceShip PLAYER)
+        public override void Update(Vector2 OFFSET, Player ENEMY)
         {
 
-            base.Update(OFFSET, PLAYER);
+            base.Update(OFFSET, ENEMY);
         }
 
         public override void Draw()

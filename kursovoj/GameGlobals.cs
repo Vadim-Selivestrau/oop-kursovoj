@@ -18,6 +18,7 @@ namespace MyGame
 {
     class GameGlobals
     {
+        public static int score = 0;
 
         public static PassObject PassObjectile, PassMob, CheckCordon;
 

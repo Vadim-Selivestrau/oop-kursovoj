@@ -28,8 +28,8 @@ namespace MyGame
             boarder = BOARDER;
             color = COLOR;
 
-            bar = new Basic2d(@"D:\uni\4sem\OOP\kursovoj\kursovoj\Content\2d\Mics\hearts", new Vector2(0, 0), new Vector2(DIMS.X - boarder * 2, DIMS.Y - boarder * 2));
-            barBGK = new Basic2d(@"D:\uni\4sem\OOP\kursovoj\kursovoj\Content\2d\Units\shipevil", new Vector2(0, 0), new Vector2(DIMS.X, DIMS.Y));
+            bar = new Basic2d(@"D:\uni\4sem\OOP\kursovoj\kursovoj\Content\2d\Mics\beer", new Vector2(0, 0), new Vector2(DIMS.X - boarder * 2, DIMS.Y - boarder * 2));
+            barBGK = new Basic2d(@"D:\uni\4sem\OOP\kursovoj\kursovoj\Content\2d\Units\Mobs\shipevil", new Vector2(0, 0), new Vector2(DIMS.X, DIMS.Y));
 
         }
 

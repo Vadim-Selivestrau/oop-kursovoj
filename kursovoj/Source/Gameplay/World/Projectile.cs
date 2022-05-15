@@ -75,6 +75,7 @@ namespace MyGame
                 if (Globals.GetDistance(pos, UNITS[i].pos) < UNITS[i].hitDistance)
                 {
                     UNITS[i].GetHit(1);
+                    ChangeScore(1);
                     return true;
                 }
             }
@@ -89,6 +90,9 @@ namespace MyGame
         {
             base.Draw();
         }
-
+        public virtual void ChangeScore(int SCORE)
+        {
+            GameGlobals.score += SCORE;
+        }
     }
 }

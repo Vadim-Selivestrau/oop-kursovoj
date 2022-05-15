@@ -23,9 +23,9 @@ namespace MyGame
         {
             speed = 3.0f;
         }
-        public override void Update(Vector2 OFFSET, PlayerSpaceShip PLAYER)
+        public override void Update(Vector2 OFFSET, Player ENEMY)
         {
-             AI(PLAYER);
+             AI(ENEMY.playerSpaceShip);
 
 
 

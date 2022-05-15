@@ -20,7 +20,7 @@ namespace MyGame
     {
 
         public Bullet(Vector2 POS, Unit OWNER, Vector2 TARGET)
-            : base(@"D:\uni\4sem\OOP\kursovoj\kursovoj\Content\2d\Projectiles\bulllet", POS, new Vector2(20, 20), OWNER, TARGET)
+            : base(@"D:\uni\4sem\OOP\kursovoj\kursovoj\Content\2d\Projectiles\vedoma", POS, new Vector2(50, 50), OWNER, TARGET)
         {
 
         }
