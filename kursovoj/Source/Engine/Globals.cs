@@ -25,13 +25,18 @@ namespace MyGame
 
     class Globals
     {
+
         public static int screenHeight, screenWidth;
         public static Vector2 playerSize;
+
+        public static Song song;
 
         public static Random rand = new Random();
 
         public static ContentManager content;
         public static SpriteBatch spriteBatch;
+
+        public static Effect baseEffect;
 
         public static MyKeyboard keyboard;
         public static MyMouseControl mouse;

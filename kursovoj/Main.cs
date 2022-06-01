@@ -58,7 +58,9 @@ namespace MyGame
 
 
             gamePlay = new GamePlay();
-        
+
+            
+            
         }
 
         protected override void UnloadContent()

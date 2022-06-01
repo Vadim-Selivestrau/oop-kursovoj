@@ -32,6 +32,9 @@ namespace MyGame
         {
             bool checkCordon = false;
 
+            SoundEffect shootSound;
+            shootSound = Globals.content.Load<SoundEffect>(@"D:\uni\4sem\OOP\kursovoj\kursovoj\Content\bin\shoot");
+            
             if (Globals.keyboard.GetPress("W"))
             {
                 if (pos.Y > Globals.playerSize.Y / 2) 
@@ -72,6 +75,7 @@ namespace MyGame
             {
                 if (Globals.keyboard.KeyUp())
                 {
+                    shootSound.Play();
                     GameGlobals.PassObjectile(new Bullet(new Vector2(pos.X, pos.Y), this, new Vector2(pos.X + Globals.screenHeight, pos.Y - 100)));
                     GameGlobals.PassObjectile(new Bullet(new Vector2(pos.X, pos.Y), this, new Vector2(pos.X + Globals.screenHeight, pos.Y)));
                     GameGlobals.PassObjectile(new Bullet(new Vector2(pos.X, pos.Y), this, new Vector2(pos.X + Globals.screenHeight, pos.Y + 100)));

@@ -51,6 +51,8 @@ namespace MyGame
             GameGlobals.PassSpawnPoint = AddSpawnPoint;
 
 
+            GameGlobals.paused = false;
+
             //GameGlobals.CheckCordon = CheckCordon;
 
 
@@ -67,7 +69,7 @@ namespace MyGame
 
         public virtual void Update()
         {
-            if (!user.playerSpaceShip.dead) 
+            if (!user.playerSpaceShip.dead && !GameGlobals.paused) 
             {
                 user.Update(aIPlayer, offset);
                 aIPlayer.Update(user, offset);
@@ -98,6 +100,14 @@ namespace MyGame
                     ResetWorld(null);
                 }
             }
+            if (Globals.keyboard.GetPress("P"))
+            {
+                if (Globals.keyboard.KeyUp())
+                {
+                    GameGlobals.paused = !GameGlobals.paused;
+                }
+            }
+
             ui.Update(this);
 
         }
