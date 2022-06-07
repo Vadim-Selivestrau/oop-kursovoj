@@ -19,12 +19,14 @@ namespace MyGame
 {
     class PlayerSpaceShip : Unit
     {
+        SoundEffect shootSound = Globals.content.Load<SoundEffect>(@"D:\uni\4sem\OOP\kursovoj\kursovoj\Content\bin\shoot");
+            
         public PlayerSpaceShip(string PATH, Vector2 POS, Vector2 DIMS, int OWNERID)
             :base(PATH, POS, DIMS, OWNERID)
         {
-            speed = 3.0f;
+            speed = 6.0f;
 
-            health = 300;
+            health = 30;
             healthMax = health;
         }
 
@@ -32,8 +34,6 @@ namespace MyGame
         {
             bool checkCordon = false;
 
-            SoundEffect shootSound;
-            shootSound = Globals.content.Load<SoundEffect>(@"D:\uni\4sem\OOP\kursovoj\kursovoj\Content\bin\shoot");
             
             if (Globals.keyboard.GetPress("W"))
             {

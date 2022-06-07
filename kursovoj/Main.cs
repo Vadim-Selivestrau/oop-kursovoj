@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -14,6 +15,8 @@ namespace MyGame
         Basic2d cursor;
 
         Color color = Color.White;
+
+        MainMenu mainMenu;
         public Main()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -55,9 +58,9 @@ namespace MyGame
             Globals.keyboard = new MyKeyboard();
             Globals.mouse = new MyMouseControl();
 
+            mainMenu = new MainMenu(ChangeGameState, ExitGame);
 
-
-            gamePlay = new GamePlay();
+            gamePlay = new GamePlay(ChangeGameState);
 
             
             
@@ -82,22 +85,34 @@ namespace MyGame
             Globals.mouse.Update();
 
 
-            gamePlay.Update();
-
+            if (Globals.gameState == 0)
+            {
+                mainMenu.Update();
+            }
+            else if (Globals.gameState == 1)
+            {
+                gamePlay.Update();
+            }
             
             Globals.keyboard.UpdateOld();
             Globals.mouse.UpdateOld();
-            
 
+            
 
 
 
             base.Update(gameTime);
         }
 
+        public virtual void ChangeGameState(object INFO)
+        {
+            Globals.gameState = Convert.ToInt32(INFO, Globals.culture);
+        }
 
-
-
+        public virtual void ExitGame(object INFO)
+        {
+            System.Environment.Exit(0);
+        }
 
         protected override void Draw(GameTime gameTime)
         {
@@ -107,8 +122,15 @@ namespace MyGame
             
             Globals.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend);
 
+            if (Globals.gameState == 0)
+            {
+                mainMenu.Draw();
+            }
+            else if (Globals.gameState == 1)
+            {
+                gamePlay.Draw();
+            }
 
-            gamePlay.Draw();
 
             cursor.Draw(new Vector2(Globals.mouse.GetNewMousePos().X, Globals.mouse.GetNewMousePos().Y), new Vector2(0, 0), color);
             Globals.spriteBatch.End();

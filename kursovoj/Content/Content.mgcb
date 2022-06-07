@@ -13,6 +13,18 @@
 
 #---------------------------------- Content ---------------------------------#
 
+#begin bcgOrig.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:bcgOrig.png
+
 #begin bulllet.jpg
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -49,6 +61,12 @@
 /processorParam:TextureFormat=Color
 /build:CursorArrow.png
 
+#begin enemyDie.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:enemyDie.wav
+
 #begin ENEMYSHIP.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -72,6 +90,12 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:hearts.jpg
+
+#begin minus.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:minus.wav
 
 #begin MyFont.spritefont
 /importer:FontDescriptionImporter
@@ -98,6 +122,12 @@
 /processorParam:Quality=Best
 /build:shoot.wav
 
+#begin start.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:start.wav
+
 #begin VLADYM.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -109,4 +139,10 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:VLADYM.png
+
+#begin volorovaVin.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:volorovaVin.wav
 

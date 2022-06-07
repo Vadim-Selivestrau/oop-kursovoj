@@ -23,6 +23,7 @@ namespace MyGame
         public SpriteFont font;
 
         public QuantityDisplayBar healthBar;
+
         public UI()
         {
             pauseOverlay = new Basic2d(@"D:\uni\4sem\OOP\kursovoj\kursovoj\Content\bin\bulllet", new Vector2(Globals.screenWidth/2, Globals.screenHeight/2), new Vector2(300,300));
@@ -47,8 +48,13 @@ namespace MyGame
             healthBar.Draw(new Vector2(20, Globals.screenHeight - 40));
 
 
+
+            
+
             if (WORLD.user.playerSpaceShip.dead)
             {
+                
+
                 tempStr = "YOU DIED";
                 strDims = font.MeasureString(tempStr);
                 Globals.spriteBatch.DrawString(font, tempStr, new Vector2(Globals.screenWidth / 2 - strDims.X / 2, Globals.screenHeight/2), Color.Red);

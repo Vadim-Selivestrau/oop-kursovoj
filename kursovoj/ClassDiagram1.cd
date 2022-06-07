@@ -1,182 +1,224 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="MyGame.Projectile" Collapsed="true">
-    <Position X="10.25" Y="2.5" Width="1.25" />
+    <Position X="9.75" Y="4" Width="1.25" />
     <TypeIdentifier>
       <HashCode>AAQAAACAQAAA4gAAAAAAAAAAAAAAAQAAAAAAACAAAAA=</HashCode>
       <FileName>Source\Gameplay\World\Projectile.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame.MyKey" Collapsed="true">
-    <Position X="22.25" Y="1.5" Width="1.25" />
+    <Position X="21.75" Y="3" Width="1.25" />
     <TypeIdentifier>
       <HashCode>AAQABAAAAAAAAAAAAAAEAAQAAAEAAAAEAAAAAAAAAAA=</HashCode>
       <FileName>Source\Engine\Input\Keyboard\MyKey.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame.MyKeyboard" Collapsed="true">
-    <Position X="24" Y="1.5" Width="1.25" />
+    <Position X="23.5" Y="3" Width="1.25" />
     <TypeIdentifier>
       <HashCode>AAQAAIAAAAAAAAAAAAgAAIAAAABCAEAAAAAAAAAAkAA=</HashCode>
       <FileName>Source\Engine\Input\MyKeyboard.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame.MyMouseControl" Collapsed="true">
-    <Position X="25.75" Y="1.5" Width="1.25" />
+    <Position X="25.25" Y="3" Width="1.25" />
     <TypeIdentifier>
       <HashCode>QJQAAAgAAAAAAyB4QAgAACAAQAjCAIAAAAKICAAcAAA=</HashCode>
       <FileName>Source\Engine\Input\MyMouseControl.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame.QuantityDisplayBar" Collapsed="true">
-    <Position X="24" Y="2.5" Width="1.25" />
+    <Position X="23.5" Y="4" Width="1.25" />
     <TypeIdentifier>
       <HashCode>AAQACAAAAAAAAgAAACAAAAAAAAAAAACAAAAAAAAQAAA=</HashCode>
       <FileName>Source\Engine\Output\QuantityDisplayBar.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame.Basic2d" Collapsed="true">
-    <Position X="14.5" Y="1" Width="1.25" />
+    <Position X="14" Y="2.5" Width="1.25" />
     <TypeIdentifier>
-      <HashCode>CEQAAAAAAAAAAgAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>CEQAAAAAAAABAgAAAAAAAIAAAAAAAAAAAQAAAAAAAAA=</HashCode>
       <FileName>Source\Engine\Basic2d.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame.Globals" Collapsed="true">
-    <Position X="25.75" Y="0.5" Width="1.25" />
+    <Position X="25.25" Y="2" Width="1.25" />
     <TypeIdentifier>
-      <HashCode>AAACAMBIAABAAAgAAAAAAEAAAAAAAAgAAAAAQAAAAAA=</HashCode>
+      <HashCode>AAACAMBIAABAAAgAEAAAAEAAAAAIAAgAAAAAQAAAAAA=</HashCode>
       <FileName>Source\Engine\Globals.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame.MyTimer" Collapsed="true">
-    <Position X="27.5" Y="1.5" Width="1.25" />
+    <Position X="27" Y="3" Width="1.25" />
     <TypeIdentifier>
       <HashCode>ABQAAEAAAAAABAAAAAAAAAAAAAIAAAACBAAACAAMBAA=</HashCode>
       <FileName>Source\Engine\MyTimer.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame.AIPlayer" Collapsed="true">
-    <Position X="8.25" Y="2.5" Width="1.25" />
+    <Position X="7.75" Y="4" Width="1.25" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Source\Gameplay\World\Players\AIPlayer.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame.User" Collapsed="true">
-    <Position X="6" Y="2.5" Width="1.25" />
+    <Position X="5.5" Y="4" Width="1.25" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Source\Gameplay\World\Players\User.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame.Bullet" Collapsed="true">
-    <Position X="10.25" Y="3.75" Width="1.25" />
+    <Position X="9.75" Y="5.5" Width="1.25" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Source\Gameplay\World\Projectiles\Bullet.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame.LittleShip" Collapsed="true">
-    <Position X="17" Y="8" Width="1.25" />
+    <Position X="12.25" Y="11.25" Width="1.25" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
       <FileName>Source\Gameplay\World\Units\Mobs\LittleShip.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame.Mob" Collapsed="true">
-    <Position X="17" Y="7" Width="1.25" />
+    <Position X="16.5" Y="9.75" Width="1.25" />
     <TypeIdentifier>
       <HashCode>AQQAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Source\Gameplay\World\Units\Mob.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame.PlayerSpaceShip" Collapsed="true">
-    <Position X="19.75" Y="7" Width="1.25" />
+    <Position X="20.75" Y="9.75" Width="1.25" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAQAAAAAAAAAQgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Source\Gameplay\World\Units\PlayerSpaceShip.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame.Player" Collapsed="true">
-    <Position X="7.25" Y="1.25" Width="1.25" />
+    <Position X="6.75" Y="2.75" Width="1.25" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAQAgAAAAAAAAAAAQASAAAAAAAAACAAggA=</HashCode>
       <FileName>Source\Gameplay\World\Player.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame.SpawnEgg" Collapsed="true">
-    <Position X="12.75" Y="5" Width="1.25" />
+    <Position X="14.5" Y="7.75" Width="1.25" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAgAAAAAAAABAIgAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Source\Gameplay\World\SpawnPoints\SpawnEgg.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame.UI" Collapsed="true">
-    <Position X="25.75" Y="2.5" Width="1.25" />
+    <Position X="25.25" Y="4" Width="1.25" />
     <TypeIdentifier>
-      <HashCode>AAYAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <HashCode>AAYAAAAAAAAAAgAAAAAAAAAAIAAAAAAAAAAAAAAQAAA=</HashCode>
       <FileName>Source\Gameplay\World\UI.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame.Unit" Collapsed="true">
-    <Position X="18.25" Y="5" Width="1.25" />
+    <Position X="18.75" Y="7.75" Width="1.25" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Source\Gameplay\World\Unit.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame.World" Collapsed="true">
-    <Position X="27.5" Y="2.5" Width="1.25" />
+    <Position X="27" Y="4" Width="1.25" />
     <TypeIdentifier>
-      <HashCode>AASAAAAEAAAAEgACAAAAAAAAAAAAAAABAABCAAAAgQA=</HashCode>
+      <HashCode>AASAAAAEAAAAEgACAgAAAAAAAAAAAAAhAABCAAAAgQA=</HashCode>
       <FileName>Source\Gameplay\World.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame.GamePlay" Collapsed="true">
-    <Position X="24" Y="0.5" Width="1.25" />
+    <Position X="23.5" Y="2" Width="1.25" />
     <TypeIdentifier>
       <HashCode>ACQAEAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
       <FileName>Source\GamePlay.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame.GameGlobals" Collapsed="true">
-    <Position X="22.25" Y="0.5" Width="1.25" />
+    <Position X="21.75" Y="2" Width="1.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAACAAAIAAEAAAAAgAAAAQAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAACAAAIAAEAAAAAgAAAAQAAAAAAIAA=</HashCode>
       <FileName>GameGlobals.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame.Main" Collapsed="true">
-    <Position X="27.5" Y="0.5" Width="1.25" />
+    <Position X="27" Y="2" Width="1.25" />
     <TypeIdentifier>
       <HashCode>AAQAEEAAAAAAAwECAAAAAAAAAAAAAAiAAAAAAAAAAAQ=</HashCode>
       <FileName>Main.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame.Program" Collapsed="true">
-    <Position X="22.25" Y="2.5" Width="1.25" />
+    <Position X="21.75" Y="4" Width="1.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame.AttackableObject" Collapsed="true">
-    <Position X="16.25" Y="2.75" Width="1.5" />
+    <Position X="16" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAwAAAAAAAAAAgAAAAAAAAAAACAAAQAIAAAAAAACIAg=</HashCode>
+      <HashCode>AA4AAAAAAAAAAgAAAAAAAAAAACAAAQAIAAAAAAACIAg=</HashCode>
       <FileName>Source\Gameplay\World\AttackableObject.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="MyGame.Button2d" Collapsed="true">
+    <Position X="18.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAQAAAAAAIAAAACAAAAAA=</HashCode>
+      <FileName>Source\Engine\Basic2d\Button2d.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyGame.SoundControl" Collapsed="true">
+    <Position X="25.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAABEAAAAAAEAAAACAAA=</HashCode>
+      <FileName>Source\Engine\Output\SoundControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyGame.Portal" Collapsed="true">
+    <Position X="11.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\Gameplay\World\SpawnPoints\Portal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyGame.EnemyShip" Collapsed="true">
+    <Position X="16.5" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\Gameplay\World\Units\Mobs\EnemyShip.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyGame.SpawnShip" Collapsed="true">
+    <Position X="20.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAgAAAEAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Source\Gameplay\World\Units\Mobs\SpawnShip.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyGame.SpawnPoint" Collapsed="true">
+    <Position X="12.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAIAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Source\Gameplay\World\SpawnPoint.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Delegate Name="MyGame.PassObject" Collapsed="true">
-    <Position X="22.25" Y="3.75" Width="1.25" />
+    <Position X="21.75" Y="5.25" Width="1.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Source\Engine\Globals.cs</FileName>
     </TypeIdentifier>
   </Delegate>
   <Delegate Name="MyGame.PassObjectAndReturn" Collapsed="true">
-    <Position X="24" Y="3.75" Width="1.25" />
+    <Position X="23.5" Y="5.25" Width="1.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Source\Engine\Globals.cs</FileName>

@@ -20,6 +20,7 @@ namespace MyGame
     
     class World
     {
+        
 
         private Vector2 offset;
 
@@ -40,10 +41,16 @@ namespace MyGame
         
         
 
-        PassObject ResetWorld;
+        PassObject ResetWorld, ChangeGameState;
 
-        public World(PassObject RESETWORLD)
+        SoundEffect endSound = Globals.content.Load<SoundEffect>(@"D:\uni\4sem\OOP\kursovoj\kursovoj\Content\bin\volorovaVin");
+
+        SoundEffect startSound = Globals.content.Load<SoundEffect>(@"D:\uni\4sem\OOP\kursovoj\kursovoj\Content\bin\start");
+        public World(PassObject RESETWORLD, PassObject CHANGEGAMESTATE)
         {
+            startSound.Play();
+
+            ChangeGameState = CHANGEGAMESTATE;
             ResetWorld = RESETWORLD;
             
             GameGlobals.PassObjectile = AddProjectile;
@@ -95,8 +102,10 @@ namespace MyGame
             }
             else
             {
+                
                 if (Globals.keyboard.GetPress("Enter"))
                 {
+                    endSound.Play();
                     ResetWorld(null);
                 }
             }
@@ -106,6 +115,11 @@ namespace MyGame
                 {
                     GameGlobals.paused = !GameGlobals.paused;
                 }
+            }
+            if (Globals.keyboard.GetPress("Back"))
+            {
+                ResetWorld(null);
+                ChangeGameState(0);
             }
 
             ui.Update(this);

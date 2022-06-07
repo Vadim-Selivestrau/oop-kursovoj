@@ -24,6 +24,10 @@ namespace MyGame
         public int ownerId;
 
         public float speed, hitDistance, health, healthMax;
+
+        SoundEffect enemyEndSound = Globals.content.Load<SoundEffect>(@"D:\uni\4sem\OOP\kursovoj\kursovoj\Content\bin\minus");
+
+
         public AttackableObject(string PATH, Vector2 POS, Vector2 DIMS, int OWNERID)
             :base(PATH, POS, DIMS)
         {
@@ -41,7 +45,6 @@ namespace MyGame
 
         public virtual void Update(Vector2 OFFSET, Player ENEMY)
         {
-
             base.Update(OFFSET);
         }
 
@@ -52,10 +55,13 @@ namespace MyGame
 
         public virtual void GetHit(float DAMAGE)
         {
+            enemyEndSound.Play();
+
             health -= DAMAGE;
 
             if(health <= 0)
             { 
+
                 dead = true; 
             }
         }
